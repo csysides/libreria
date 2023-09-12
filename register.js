@@ -13,17 +13,19 @@ const users = JSON.parse (localStorage.getItem (users)) || [];
 
 const saveToLocalStorage = () =>{
     localStorage.setItem ('users', JSON.stringify(users))
-}
+};
+
+// para validar si el campo esta vacio
 
 const isEmpty = (input) =>{
     return !input.value.trim().length 
-}
+};
 
 //longitud de la contraseña, si se cumple, retorn true. si no falce
 
 const isBetween =(input, min, max) =>{
 return input.value.length >= min && input.value.length < max
-}
+};
 
 //validar mail
 
@@ -31,13 +33,13 @@ const isEmailValid = (input) =>{
     const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
     return re.test(input.value.trim())
 
-}
+};
 
 //confirmacion de email entre los usuarios
 
 const isExistingMail = (input) =>{
     return users.some((users)=> users.email === input.value.trim())
-}
+};
 
 //validar contrasaeña con expresion regular (un carácter numérico,
 // uno del alfabeto en minúscula,
@@ -48,7 +50,7 @@ const isExistingMail = (input) =>{
 const isPassSecure =(input)=>{
     const re = /^(?=.\d)(?=.[\u0021-\u002b\u003c-\u0040])(?=.[A-Z])(?=.[a-z])\S{8,16}$/;
     return re.test(input.value.trim())
-}
+};
 
 //error al validar un input
 
@@ -59,7 +61,7 @@ const showError = (input, message) =>{
     const error = formField.querySelector("small")
     error.style.display = "block"
     error.textContent = message 
-} 
+} ;
 
 //input valido
 const showSuccess = (input, message) =>{

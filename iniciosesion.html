@@ -7,17 +7,20 @@
 
 </head>
 <body>
+    <!-- formulario de acceso -->
+
       <main> <form class="form-container" id="register-form">
+        <p class="form__title">Ingresá</p>
     <div class="menu">
-        <div class="form__field"><input type="text" id="name" placeholder="Nombre">
-        <small></small>
-            <br>
-    </div>
+        
+    <!-- email -->
         <div  class="form__field"> <br>
-        <input type="email" id="email" placeholder="Correo Electronico">
+        <input type="email" id="email" placeholder="Correo Electronico" autocomplete="off">
         <small></small> <br></div>
+        <!--contraseña-->
        <div  class="form__field"> <br>
-        <input type="password" name="Contraseña" id="contraseña" placeholder="Contraseña"><small></small>
+        <input type="password" name="Contraseña" id="contraseña" placeholder="Contraseña" autocomplete="off">
+        <small id="form__error"></small>
         <br>
         <div class="botones">
         <br></div>
